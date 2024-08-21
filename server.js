@@ -1,11 +1,10 @@
-require("dotenv").config();
+import dotenv from 'dotenv';
+import express from "express";
+import router from "./src/routes/helloRoute.js";
 
-const express = require("express");
+dotenv.config();
 const app = express();
-
-const helloRoute = require("./src/routes/helloRoute");
-
-app.use("", helloRoute);
+app.use("", router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

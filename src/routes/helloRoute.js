@@ -1,7 +1,7 @@
-const express = require("express");
-const router = express.Router();
+import { Router } from "express";
+import sayHello from "../controllers/helloController.js";
 
-const Controller = require("../controllers/helloController");
-router.get("/hello", Controller);
+const router = Router();
+router.get("/hello", sayHello);
 
-module.exports = router;
+export default router;
